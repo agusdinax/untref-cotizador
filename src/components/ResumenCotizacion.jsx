@@ -1,4 +1,3 @@
-import React from "react";
 import { Chip } from "@mui/material";
 import { CORTES_DISPONIBLES, perfiles } from "../utils/calculadoraAsado.js";
 
@@ -58,17 +57,15 @@ const ResumenCotizacion = ({ datos, resultado }) => {
           <strong>{kgPorPersona.toFixed(2)} kg</strong>
         </p>
       </div>
-
-      <h3 className="resumen-section-title">
+      <h3 className="card-title">
         Distribución por tipo de carne
       </h3>
-
       <table className="tabla-resumen">
         <thead>
           <tr>
             <th>Corte / achura</th>
             <th>Kg totales</th>
-            <th>Kg por persona eq.</th>
+            <th>Kg por persona</th>
           </tr>
         </thead>
         <tbody>

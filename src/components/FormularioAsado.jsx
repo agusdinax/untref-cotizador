@@ -36,16 +36,7 @@ const FormularioAsado = ({ datos, onCalcular }) => {
   const validar = () => {
     const err = {};
     if (!form.adultos || Number(form.adultos) <= 0) {
-      err.adultos = "Debe haber al menos 1 adulto.";
-    }
-    if (Number(form.ninos) < 0) {
-      err.ninos = "No puede ser negativo.";
-    }
-    if (!form.perfilComida) {
-      err.perfilComida = "Seleccioná un perfil.";
-    }
-    if (!form.cortesSeleccionados || form.cortesSeleccionados.length === 0) {
-      err.cortes = "Elegí al menos un tipo de carne.";
+      err.adultos = "Debe haber al menos 1 adulto";
     }
     setErrores(err);
     return Object.keys(err).length === 0;
@@ -77,7 +68,7 @@ const FormularioAsado = ({ datos, onCalcular }) => {
             fullWidth
             value={form.adultos}
             onChange={manejarCambio("adultos")}
-            inputProps={{ min: 1 }}
+            inputProps={{ min: 0 }}
             error={!!errores.adultos}
             helperText={errores.adultos}
           />
@@ -135,7 +126,6 @@ const FormularioAsado = ({ datos, onCalcular }) => {
             <FormHelperText>{errores.cortes}</FormHelperText>
           )}
         </FormControl>
-
         <Button type="submit" variant="contained" size="large">
           Calcular
         </Button>

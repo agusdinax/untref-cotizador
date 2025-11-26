@@ -1,5 +1,3 @@
-// src/components/Layout.jsx
-import React from "react";
 import { AppBar, Toolbar, Typography, Container, Box } from "@mui/material";
 import OutdoorGrillIcon from "@mui/icons-material/OutdoorGrill";
 import HistorialNav from "./HistorialNav.jsx";
@@ -13,8 +11,6 @@ const Layout = ({ children, historial, onRecalcular, onLimpiar }) => {
           <Typography variant="h6" className="logo-asado" sx={{ flexGrow: 1 }}>
             COTIZADOR DE ASADO ARGENTINO
           </Typography>
-
-          {/* Icono de historial en navbar */}
           <HistorialNav
             historial={historial}
             onRecalcular={onRecalcular}
@@ -22,7 +18,6 @@ const Layout = ({ children, historial, onRecalcular, onLimpiar }) => {
           />
         </Toolbar>
       </AppBar>
-
       <Box component="main" className="app-container">
         <Container maxWidth="lg">{children}</Container>
       </Box>

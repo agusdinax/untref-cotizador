@@ -1,14 +1,14 @@
-// Kg de carne por adulto según perfil de consumo
+//KG DE CARNE POR ADULTO SEGUN SU TIPO DE COMER
 const CARNE_POR_ADULTO = {
   light: 0.4,
   normal: 0.6,
   buen_comer: 0.8,
 };
 
-// Niñxs comen la mitad
+//NIÑOS COMEN LA MITAD
 const FACTOR_NINIOS = 0.5;
 
-// Cortes disponibles (solo carnes argentinas típicas de asado)
+//CORTES DISPONIBLES
 export const CORTES_DISPONIBLES = [
   { id: "asadoTira", nombre: "Asado de tira" },
   { id: "vacio", nombre: "Vacio" },
@@ -17,9 +17,10 @@ export const CORTES_DISPONIBLES = [
   { id: "morcilla", nombre: "Morcilla" },
   { id: "matambre", nombre: "Matambre" },
   { id: "pollo", nombre: "Pollo a la parrilla" },
+  { id: "chichulines", nombre: "Chinchulines" },
 ];
 
-// Distribución por corte: pesos relativos
+//X CORTE PESOS RELATIVOS
 const DISTRIBUCION_CORTES = {
   asadoTira: 0.3,
   vacio: 0.2,
@@ -28,6 +29,7 @@ const DISTRIBUCION_CORTES = {
   morcilla: 0.1,
   matambre: 0.05,
   pollo: 0.05,
+  chinchulines: 0.2,
 };
 
 export const perfiles = [
@@ -38,15 +40,11 @@ export const perfiles = [
 
 export function calcularAsado(datos) {
   const { adultos, ninos, perfilComida, cortesSeleccionados } = datos;
-
   const adultosNum = Number(adultos) || 0;
   const ninosNum = Number(ninos) || 0;
-
   const factorBase = CARNE_POR_ADULTO[perfilComida] || CARNE_POR_ADULTO.normal;
-
   const equivalentes = adultosNum + ninosNum * FACTOR_NINIOS;
   const totalKg = equivalentes * factorBase;
-
   if (totalKg <= 0 || !cortesSeleccionados || cortesSeleccionados.length === 0) {
     return {
       totalKg: 0,
