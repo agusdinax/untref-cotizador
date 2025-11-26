@@ -82,7 +82,7 @@ const FormularioAsado = ({ datos, onCalcular }) => {
             helperText={errores.adultos}
           />
           <TextField
-            label="Niñxs"
+            label="Niños"
             type="number"
             fullWidth
             value={form.ninos}
@@ -137,7 +137,7 @@ const FormularioAsado = ({ datos, onCalcular }) => {
         </FormControl>
 
         <Button type="submit" variant="contained" size="large">
-          Calcular carne necesaria
+          Calcular
         </Button>
       </Stack>
     </form>

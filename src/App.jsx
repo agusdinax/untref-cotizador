@@ -83,7 +83,7 @@ const App = () => {
               <h2 className="card-title">Datos del asado</h2>
               <p className="card-subtitle">
                 Ingresa la cantidad de personas, el perfil de los comensales y
-                elegí los tipos de carne para estimar cuántos kg vas a necesitar.
+                elegí los tipos de carne para estimar cuántos kg vas a necesitar
               </p>
               <FormularioAsado
                 datos={datosEntrada}

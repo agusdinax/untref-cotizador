@@ -45,7 +45,7 @@ const ResumenCotizacion = ({ datos, resultado }) => {
 
       <div className="resumen-info">
         <p>
-          Personas adultas: <strong>{datos.adultos}</strong> · Niñxs:{" "}
+          Personas adultas: <strong>{datos.adultos}</strong> || Niños:{" "}
           <strong>{datos.ninos}</strong> (equivalente aprox:{" "}
           <strong>{totalPersonasEq.toFixed(1)} personas</strong>)
         </p>
@@ -54,7 +54,7 @@ const ResumenCotizacion = ({ datos, resultado }) => {
           <strong>{totalKg.toFixed(2)} kg</strong>
         </p>
         <p>
-          Carne por persona equivalente:{" "}
+          Cantidad de carne por persona:{" "}
           <strong>{kgPorPersona.toFixed(2)} kg</strong>
         </p>
       </div>
@@ -88,7 +88,7 @@ const ResumenCotizacion = ({ datos, resultado }) => {
       </table>
 
       <p className="resumen-footnote">
-        * Los valores son estimados y suponen un asado típico argentino con
+        * Los valores son estimados y suponen un asado típico con
         ensaladas y acompañamientos.
       </p>
     </div>
