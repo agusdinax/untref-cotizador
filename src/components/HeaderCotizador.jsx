@@ -16,8 +16,8 @@ const HeaderCotizador = ({
             {descripcion}
           </p>
           <ul className="header-cotizador-lista">
-            <li>✔ Evitá quedarte corto de comida</li>
-            <li>✔ No compras carne demás</li>
+            <li>✔ No te quedas corto</li>
+            <li>✔ No compras demás</li>
           </ul>
         </div>
       </div>
