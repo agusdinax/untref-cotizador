@@ -1,0 +1,253 @@
+:root {
+  --color-principal: #c62828;
+  --color-secundario: #ffb300;
+  --color-fondo: #fdf7f2;
+  --color-texto: #222222;
+  --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --radio-base: 18px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #ffe0b2 0, var(--color-fondo) 45%);
+  color: var(--color-texto);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background-color: var(--color-principal) !important;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-icon {
+  margin-right: 0.5rem;
+}
+
+.navbar-title {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+
+.navbar-spacer {
+  flex: 1;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+/* Layout responsive: formulario + resumen */
+
+.layout-dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .layout-dos-columnas {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  }
+}
+
+/* Tarjetas */
+
+.card {
+  background-color: white;
+  border-radius: var(--radio-base);
+  box-shadow: var(--sombra-suave);
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin: 0 0 0.3rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.card-subtitle {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Badge perfil */
+
+.badge-perfil {
+  border-radius: 999px;
+  padding: 0.15rem 0.75rem;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  background-color: rgba(198, 40, 40, 0.06);
+  color: var(--color-principal);
+}
+
+/* Resumen */
+
+.resumen-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  gap: 0.75rem;
+}
+
+.resumen-header-main {
+  flex: 1;
+}
+
+.resumen-info {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.resumen-info p {
+  margin: 0.1rem 0;
+}
+
+.resumen-section-title {
+  margin-top: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.resumen-footnote {
+  margin-top: 0.7rem;
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* Tabla pequeña del resumen */
+
+.tabla-resumen {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.tabla-resumen th,
+.tabla-resumen td {
+  padding: 0.35rem 0.4rem;
+  text-align: right;
+}
+
+.tabla-resumen th:first-child,
+.tabla-resumen td:first-child {
+  text-align: left;
+}
+
+.tabla-resumen thead {
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-resumen tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.historial-menu-paper {
+  width: 320px;
+  max-height: 400px;
+}
+
+.header-cotizador {
+  position: relative;
+  width: 100%;
+  min-height: 150px;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-image:
+    linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("/public/asado-argentino.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-cotizador-overlay {
+  width: 100%;
+  max-width: 1080px;
+}
+
+.header-cotizador-content {
+  max-width: 620px;
+  color: #ffffff;
+}
+
+.header-cotizador-title {
+  font-size: 1.8rem;
+  line-height: 1.2;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.header-cotizador-subtitle {
+  font-size: 1rem;
+  margin: 0 0 0.75rem 0;
+  opacity: 0.95;
+}
+
+.header-cotizador-description {
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem 0;
+  opacity: 0.9;
+}
+
+.header-cotizador-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem 0;
+  font-size: 0.95rem;
+}
+
+.header-cotizador-lista li {
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .header-cotizador {
+    padding: 2.5rem 1.25rem;
+    text-align: left;
+  }
+
+  .header-cotizador-title {
+    font-size: 1.6rem;
+  }
+
+  .header-cotizador-subtitle,
+  .header-cotizador-description {
+    font-size: 0.9rem;
+  }
+}
