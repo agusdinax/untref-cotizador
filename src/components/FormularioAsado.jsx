@@ -50,11 +50,19 @@ const FormularioAsado = ({ datos, onCalcular }) => {
 
   const renderCortes = (selected) => {
     if (!selected || selected.length === 0) return "";
+
     const nombres = selected
       .map(
         (id) => CORTES_DISPONIBLES.find((c) => c.id === id)?.nombre || id
       )
       .join(", ");
+    const isMobile =
+      typeof window !== "undefined" && window.innerWidth <= 600;
+
+    if (isMobile && selected.length > 2) {
+      return `${selected.length} tipos de carne seleccionados`;
+    }
+
     return nombres;
   };
 
@@ -102,8 +110,11 @@ const FormularioAsado = ({ datos, onCalcular }) => {
             <FormHelperText>{errores.perfilComida}</FormHelperText>
           )}
         </FormControl>
-
-        <FormControl fullWidth error={!!errores.cortes}>
+        <FormControl
+          fullWidth
+          error={!!errores.cortes}
+          className="form-control-cortes"
+        >
           <InputLabel id="cortes-label">Tipos de carne</InputLabel>
           <Select
             labelId="cortes-label"
@@ -126,6 +137,7 @@ const FormularioAsado = ({ datos, onCalcular }) => {
             <FormHelperText>{errores.cortes}</FormHelperText>
           )}
         </FormControl>
+
         <Button type="submit" variant="contained" size="large">
           Calcular
         </Button>

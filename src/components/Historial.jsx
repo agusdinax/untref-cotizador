@@ -21,6 +21,7 @@ import ResumenCotizacion from "./ResumenCotizacion.jsx";
 const Historial = ({ historial, onUseItem, onClear }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const openMenu = Boolean(anchorEl);
+
   const [detalleAbierto, setDetalleAbierto] = useState(false);
   const [cotizacionSeleccionada, setCotizacionSeleccionada] = useState(null);
 
@@ -42,6 +43,13 @@ const Historial = ({ historial, onUseItem, onClear }) => {
     setDetalleAbierto(false);
   };
 
+  const handleUsarCotizacion = () => {
+    if (cotizacionSeleccionada && onUseItem) {
+      onUseItem(cotizacionSeleccionada);
+    }
+    setDetalleAbierto(false);
+  };
+
   return (
     <>
       <IconButton color="inherit" onClick={handleOpenMenu}>
@@ -60,11 +68,15 @@ const Historial = ({ historial, onUseItem, onClear }) => {
         }}
       >
         <Box className="historial-menu-header">
-          <Typography>
+          <Typography
+            variant="subtitle1"
+            className="historial-menu-title"
+          >
             Historial de cotizaciones
           </Typography>
           <Typography
             variant="caption"
+            color="text.secondary"
             className="historial-menu-subtitle"
           >
             Selecciona para ver el detalle
@@ -78,12 +90,12 @@ const Historial = ({ historial, onUseItem, onClear }) => {
               color="text.secondary"
               className="historial-menu-empty-text"
             >
-              Todavía no tenes cotizaciones guardadas
+              Todavía no hay cotizaciones guardadas
             </Typography>
           </Box>
         ) : (
-          <>
-            {historial.map((item) => (
+          [
+            ...historial.map((item) => (
               <MenuItem
                 key={item.id}
                 onClick={() => handleVerDetalle(item)}
@@ -110,10 +122,15 @@ const Historial = ({ historial, onUseItem, onClear }) => {
                   }
                 />
               </MenuItem>
-            ))}
-
-            <Divider className="historial-menu-divider" />
-            <Box className="historial-menu-footer">
+            )),
+            <Divider
+              key="historial-divider-footer"
+              className="historial-menu-divider"
+            />,
+            <Box
+              key="historial-footer"
+              className="historial-menu-footer"
+            >
               <Button
                 size="small"
                 color="secondary"
@@ -127,8 +144,8 @@ const Historial = ({ historial, onUseItem, onClear }) => {
               >
                 Limpiar historial
               </Button>
-            </Box>
-          </>
+            </Box>,
+          ]
         )}
       </Menu>
       <Dialog

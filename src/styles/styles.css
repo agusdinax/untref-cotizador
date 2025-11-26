@@ -310,3 +310,20 @@ body {
   text-transform: none !important;
   font-weight: 500 !important;
 }
+
+.form-control-cortes {
+  width: 100%;
+}
+
+.form-control-cortes .MuiSelect-select {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+
+@media (max-width: 600px) {
+  .form-control-cortes .MuiSelect-select {
+    font-size: 0.9rem;
+  }
+}
