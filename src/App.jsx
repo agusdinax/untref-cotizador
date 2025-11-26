@@ -19,7 +19,7 @@ const App = () => {
 
   const [resultado, setResultado] = useState(null);
   const [historial, setHistorial] = useState([]);
- //cargar el historial
+
   useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
@@ -31,7 +31,7 @@ const App = () => {
     }
   }, []);
 
-  //guardar el historial
+  //Guardar el historial 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(historial));
   }, [historial]);
@@ -47,13 +47,11 @@ const App = () => {
       entrada: datos,
       resultado: salida,
     };
-
-    setHistorial((prev) => [itemHistorial, ...prev].slice(0, 20));
+    setHistorial((prev) => [itemHistorial, ...prev]);
   };
 
   const manejarLimpiarHistorial = () => {
     setHistorial([]);
-    localStorage.removeItem(STORAGE_KEY);
   };
 
   const manejarUsarCotizacion = (item) => {
@@ -76,7 +74,9 @@ const App = () => {
           />
         </Toolbar>
       </AppBar>
+
       <HeaderCotizador />
+
       <div className="app-container">
         <Container maxWidth="lg" disableGutters>
           <div className="layout-dos-columnas">
@@ -91,6 +91,7 @@ const App = () => {
                 onCalcular={manejarCalcular}
               />
             </div>
+
             <ResumenCotizacion datos={datosEntrada} resultado={resultado} />
           </div>
         </Container>
