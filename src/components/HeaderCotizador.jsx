@@ -2,8 +2,8 @@ import "../styles/styles.css";
 
 const HeaderCotizador = ({
   titulo = "Cotizador de cantidad de carne por persona",
-  subtitulo = "Con está calculadora podrás calcular la cantidad de carne perfecta por persona para tu asado, según la cantidad de personas y el perfil de consumo.",
-  descripcion = "Ingresa los datos del asado y el cotizador te devuelve recomendaciones de compra de cantidad de carne por persona estimado por diferentes cortes"
+  subtitulo = "Con esta calculadora se puede calcular la cantidad de carne perfecta por persona para tu asado, según la cantidad de personas y el perfil de consumo.",
+  descripcion = "Ingresa los datos del asado y el cotizador te devuelve recomendaciones de compra con la cantidad de carne por persona estimado por diferentes cortes"
 }) => {
   return (
     <header className="header-cotizador">

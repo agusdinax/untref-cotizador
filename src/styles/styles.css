@@ -68,13 +68,13 @@ body {
 .card-title {
   margin: 0 0 0.3rem;
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .card-subtitle {
   margin: 0 0 1rem;
   font-size: 0.85rem;
-  color: #666;
+  color: #424141;
 }
 
 .badge-perfil {

@@ -12,8 +12,8 @@ const ResumenCotizacion = ({ datos, resultado }) => {
       <div className="card">
         <h2 className="card-title">Resumen de cotización</h2>
         <p className="card-subtitle">
-          Completá el formulario y calculá para ver cuántos kg de carne
-          se recomiendan para tu asado.
+          Completa el formulario y calculá cuántos kg de carne
+          se recomiendan para tu asado perfecto
         </p>
       </div>
     );
@@ -32,7 +32,7 @@ const ResumenCotizacion = ({ datos, resultado }) => {
         <div className="resumen-header-main">
           <h2 className="card-title">Resumen de cotización</h2>
           <p className="card-subtitle">
-            Estimación de carne total y por tipo de corte.
+            Estimación de carne total y por tipo de corte
           </p>
         </div>
         <Chip
@@ -86,7 +86,7 @@ const ResumenCotizacion = ({ datos, resultado }) => {
 
       <p className="resumen-footnote">
         * Los valores son estimados y suponen un asado típico con
-        ensaladas y acompañamientos.
+        ensaladas y acompañamientos
       </p>
     </div>
   );

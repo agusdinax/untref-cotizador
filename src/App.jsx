@@ -73,9 +73,7 @@ const App = () => {
           />
         </Toolbar>
       </AppBar>
-
       <HeaderCotizador />
-
       <div className="app-container">
         <Container maxWidth="lg" disableGutters>
           <div className="layout-dos-columnas">
@@ -83,7 +81,7 @@ const App = () => {
               <h2 className="card-title">Datos del asado</h2>
               <p className="card-subtitle">
                 Ingresa la cantidad de personas, el perfil de los comensales y
-                elegí los tipos de carne para estimar cuántos kg vas a necesitar
+                elegí los tipos de carne para estimar cuantos kg vas a necesitar
               </p>
               <FormularioAsado
                 datos={datosEntrada}
