@@ -1,9 +1,9 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { AppBar, Toolbar, Container } from "@mui/material";
 import OutdoorGrillIcon from "@mui/icons-material/OutdoorGrill";
 import FormularioAsado from "./components/FormularioAsado.jsx";
 import ResumenCotizacion from "./components/ResumenCotizacion.jsx";
-import HistorialMenu from "./components/HistorialMenu.jsx";
+import Historial from "./components/Historial.jsx";
 import HeaderCotizador from "./components/HeaderCotizador.jsx";
 import { calcularAsado } from "./utils/calculadoraAsado.js";
 
@@ -19,7 +19,7 @@ const App = () => {
 
   const [resultado, setResultado] = useState(null);
   const [historial, setHistorial] = useState([]);
-
+ //cargar el historial
   useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
@@ -31,6 +31,7 @@ const App = () => {
     }
   }, []);
 
+  //guardar el historial
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(historial));
   }, [historial]);
@@ -46,6 +47,7 @@ const App = () => {
       entrada: datos,
       resultado: salida,
     };
+
     setHistorial((prev) => [itemHistorial, ...prev].slice(0, 20));
   };
 
@@ -54,9 +56,10 @@ const App = () => {
     localStorage.removeItem(STORAGE_KEY);
   };
 
-  const manejarSeleccionHistorial = (item) => {
+  const manejarUsarCotizacion = (item) => {
+    if (!item) return;
     setDatosEntrada(item.entrada);
-    setResultado(item.resultado); 
+    setResultado(item.resultado);
   };
 
   return (
@@ -66,9 +69,9 @@ const App = () => {
           <OutdoorGrillIcon className="navbar-icon" />
           <span className="navbar-title">COTIZADOR DE CARNE PARA ASADOS</span>
           <span className="navbar-spacer" />
-          <HistorialMenu
+          <Historial
             historial={historial}
-            onSelectItem={manejarSeleccionHistorial}
+            onUseItem={manejarUsarCotizacion}
             onClear={manejarLimpiarHistorial}
           />
         </Toolbar>
@@ -81,7 +84,7 @@ const App = () => {
               <h2 className="card-title">Datos del asado</h2>
               <p className="card-subtitle">
                 Ingresa la cantidad de personas, el perfil de los comensales y
-                elegí los tipos de carne para estimar cuantos kg vas a necesitar
+                elegí los tipos de carne para estimar cuántos kg vas a necesitar
               </p>
               <FormularioAsado
                 datos={datosEntrada}

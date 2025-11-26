@@ -57,9 +57,7 @@ const ResumenCotizacion = ({ datos, resultado }) => {
           <strong>{kgPorPersona.toFixed(2)} kg</strong>
         </p>
       </div>
-      <h3 className="card-title">
-        Distribución por tipo de carne
-      </h3>
+      <h3 className="card-title">Distribución por tipo de carne</h3>
       <table className="tabla-resumen">
         <thead>
           <tr>

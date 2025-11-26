@@ -15,11 +15,12 @@
 
 body {
   margin: 0;
-  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: radial-gradient(circle at bottom, #ffe0b2 0, var(--color-fondo) 45%);
   color: var(--color-texto);
 }
 
+/* NAVBAR */
 .navbar {
   background-color: var(--color-principal) !important;
   color: white;
@@ -40,6 +41,7 @@ body {
   flex: 1;
 }
 
+/* LAYOUT GENERAL */
 .app-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -58,6 +60,7 @@ body {
   }
 }
 
+/* CARD */
 .card {
   background-color: white;
   border-radius: var(--radio-base);
@@ -77,6 +80,7 @@ body {
   color: #424141;
 }
 
+/* RESUMEN COTIZACION */
 .badge-perfil {
   border-radius: 999px;
   padding: 0.15rem 0.75rem;
@@ -104,12 +108,6 @@ body {
 
 .resumen-info p {
   margin: 0.1rem 0;
-}
-
-.resumen-section-title {
-  margin-top: 0.5rem;
-  margin-bottom: 0.4rem;
-  font-size: 0.95rem;
 }
 
 .resumen-footnote {
@@ -143,11 +141,7 @@ body {
   background-color: #fafafa;
 }
 
-.historial-menu-paper {
-  width: 320px;
-  max-height: 400px;
-}
-
+/* HEADER */
 .header-cotizador {
   position: relative;
   width: 100%;
@@ -223,4 +217,96 @@ body {
   .header-cotizador-description {
     font-size: 0.9rem;
   }
+}
+
+/* HISTORIAL */
+.historial-menu-paper {
+  min-width: 280px;
+  max-width: 360px;
+  border-radius: 12px !important;
+  padding: 4px 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.historial-menu-header {
+  padding: 8px 16px 4px 16px;
+}
+
+.historial-menu-title {
+  font-weight: 600 !important;
+}
+
+.historial-menu-subtitle {
+  display: block;
+  margin-top: 2px;
+  opacity: 0.8;
+}
+
+.historial-menu-divider {
+  margin: 4px 0;
+}
+
+.historial-menu-empty {
+  padding: 16px;
+}
+
+.historial-menu-empty-text {
+  text-align: center;
+}
+
+.historial-menu-item {
+  align-items: flex-start !important;
+  white-space: normal !important;
+  padding: 8px 16px !important;
+}
+
+.historial-menu-item-main {
+  font-size: 0.9rem;
+}
+
+.historial-menu-item-date {
+  font-size: 0.75rem;
+}
+
+.historial-menu-footer {
+  padding: 8px 16px 10px 16px;
+}
+
+.historial-menu-clear-btn {
+  text-transform: none !important;
+  font-size: 0.8rem !important;
+}
+
+/* POPUP*/
+.historial-dialog-root .MuiPaper-root {
+  border-radius: 16px;
+}
+
+.historial-dialog-title {
+  font-weight: 600 !important;
+  padding: 16px 24px 8px 24px !important;
+}
+
+.historial-dialog-content {
+  padding: 12px 24px 20px 24px !important;
+}
+
+.historial-dialog-date {
+  display: block;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.historial-dialog-actions {
+  padding: 8px 16px 16px 16px !important;
+  gap: 8px;
+}
+
+.historial-dialog-btn {
+  text-transform: none !important;
+}
+
+.historial-dialog-btn-primary {
+  text-transform: none !important;
+  font-weight: 500 !important;
 }
